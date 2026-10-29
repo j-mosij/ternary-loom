@@ -1,0 +1,12 @@
+<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ternary hex automata mark by j-mosij">
+  <rect width="80" height="80" fill="#050811"/>
+  <!-- hex ring -->
+  <polygon points="40,10 62,22 62,46 40,58 18,46 18,22" fill="none" stroke="#06b6d4" stroke-width="1.5"/>
+  <circle cx="40" cy="10" r="3.5" fill="#06b6d4"/>
+  <circle cx="62" cy="22" r="3.5" fill="#67e8f9"/>
+  <circle cx="62" cy="46" r="3.5" fill="#0e7490"/>
+  <circle cx="40" cy="58" r="3.5" fill="#06b6d4"/>
+  <circle cx="18" cy="46" r="3.5" fill="#67e8f9"/>
+  <circle cx="18" cy="22" r="3.5" fill="#0e7490"/>
+  <circle cx="40" cy="34" r="3" fill="#e2e8f0"/>
+</svg>
