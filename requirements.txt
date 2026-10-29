@@ -1,0 +1,5 @@
+# Runtime dependencies: none
+# Python 3.9+ standard library only.
+#
+# Integrity is provided by the open ternary shell, not by external crypto libraries.
+# No PQC packages are included; the shell check is the public protection layer.

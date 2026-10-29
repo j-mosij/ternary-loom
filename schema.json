@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TernaryLoomTryte",
+  "type": "object",
+  "properties": {
+    "A": { "type": "integer", "minimum": -1, "maximum": 1 },
+    "B": { "type": "integer", "minimum": -1, "maximum": 1 },
+    "C": { "type": "integer", "minimum": -1, "maximum": 1 }
+  },
+  "required": ["A", "B", "C"],
+  "additionalProperties": false,
+  "description": "Open tryte. C must equal ((A + B) % 3) - 1. Author: j-mosij"
+}

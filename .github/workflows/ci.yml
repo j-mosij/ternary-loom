@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Injection scan
+        run: |
+          python3 - << 'PY'
+          import os, sys
+          forbidden = ["eval(", "exec(", "compile(", "__import__(", "os.system(", "subprocess."]
+          hits = []
+          for root, _, files in os.walk("."):
+              if ".git" in root: continue
+              for f in files:
+                  if f.endswith((".py", ".html", ".yml", ".json", ".md")):
+                      path = os.path.join(root, f)
+                      with open(path, encoding="utf-8", errors="ignore") as fh:
+                          for i, line in enumerate(fh, 1):
+                              for pat in forbidden:
+                                  if pat in line:
+                                      hits.append(f"{path}:{i}:{pat}")
+          if hits:
+              print("INJECTION SCAN FAILED")
+              for h in hits: print(h)
+              sys.exit(1)
+          print("INJECTION SCAN PASSED")
+          PY
+      - name: Run loom
+        run: python3 ternary_loom.py
